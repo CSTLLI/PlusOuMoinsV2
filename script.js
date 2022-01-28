@@ -81,7 +81,7 @@ enter.addEventListener('click', function(){
 				  		   `
 	}
 	else{
-		tentatives.innerText = `Mince.. vous avez perdu. Le numéro était ${number}.`;
+		tentatives.innerText = `Mince.. vous avez perdu. Le numéro était ${random}.`;
 		ind.innerText = "";
 		reset();
 	}
