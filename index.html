@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Plus ou moins v2</title>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+		<script src="script.js" type="text/javascript" defer></script>
+
+    </head>
+    <body class="m-0 p-0 d-flex">
+		<section class="principal container d-flex d-flex flex-column text-center justify-content-center w-75 vh-100">
+			<h1>Plus ou moins version 2.0 bêta alpha</h1>
+
+			<div class="mt-5 mb-5 d-flex flex-column w-50 m-auto">
+				<p id="infos">Choisir un nombre entre 1 et 100</p>
+				<input type="number">
+
+				<button type="button" class="btn btn-primary mt-2 mb-2">Entrer</button>
+			</div>
+
+			<div>
+				<p id="tentatives"></p>
+
+				<p id="indice" class="fs-3 fw-bold"></p>
+
+				<p id="historique"></p>
+
+			</div>
+		</section>
+
+		<section class="w-25 bg-dark text-left text-light">
+			<h2 style="font-size: 2vw;" class="px-3">HISTORIQUE</h2>
+			<div class="w-100 border-top"></div>
+
+			<div class="values d-flex flex-column-reverse"></div>
+		</section>
+    </body>
+</html>
