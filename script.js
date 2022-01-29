@@ -8,10 +8,8 @@ panel = document.querySelector(".values");
 
 let chances = 5;
 
-// Création d'une valeur random 
-
-var random = Math.floor(Math.random() * 100);
-console.log(`Valeur à trouver : ${random}`);
+var randomNbr = Math.floor(Math.random() * 100);
+console.log(`Valeur à trouver : ${randomNbr}`);
 
 // Fonctions
 
@@ -33,32 +31,25 @@ function reset(){
 }
 
 function findNumber(){
-	if (number < 0 || number > 100){
+	if (number >= 0 && number <= 100){
+		if (randomNbr > number){
+			enter.classList.remove("btn-primary");
+			enter.classList.add("btn-danger");
+			ind.innerText = "Le nombre est trop petit.";
+		} else if (randomNbr < number){
+			enter.classList.remove("btn-primary");
+			enter.classList.add("btn-danger");
+			ind.innerText = "Le nombre est trop grand.";
+		} else {
+			enter.classList.remove("btn-primary");
+			enter.classList.remove("btn-danger");
+			enter.classList.add("btn-success");
+			tentatives.innerText = `Il te restait ${chances} chances.`;
+			ind.innerText = "Bravo, tu as trouvé le bon nombre !";
+			reset();
+		}
+	} else {
 		alert("Nombre invalide.");
-		return;
-	}
-	if (random > number){
-		enter.classList.remove("btn-primary");
-		enter.classList.add("btn-danger");
-
-		ind.innerText = "Le nombre est trop petit.";
-	}
-	else if (random < number){
-		enter.classList.remove("btn-primary");
-		enter.classList.add("btn-danger");
-
-		ind.innerText = "Le nombre est trop grand.";
-	}
-	else {
-		enter.classList.remove("btn-primary");
-		enter.classList.remove("btn-danger");
-
-		enter.classList.add("btn-success");
-
-		tentatives.innerText = `Il te restait ${chances} chances.`;
-		ind.innerText = "Bravo, tu as trouvé le bon nombre !";
-
-		reset();
 	}
 }
 
@@ -81,7 +72,7 @@ enter.addEventListener('click', function(){
 				  		   `
 	}
 	else{
-		tentatives.innerText = `Mince.. vous avez perdu. Le numéro était ${random}.`;
+		tentatives.innerText = `Mince.. vous avez perdu. Le numéro était ${randomNbr}.`;
 		ind.innerText = "";
 		reset();
 	}
